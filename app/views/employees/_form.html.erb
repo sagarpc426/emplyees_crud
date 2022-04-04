@@ -1,0 +1,15 @@
+<div class="modal-body">
+  <p>
+    <%= e.label :name %>
+    <%= e.text_field :name %>
+  </p>
+  <p>
+    <%= e.label :email %>
+    <%= e.email_field :email %>
+  </p>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= e.submit "Submit", class: "btn btn-primary" %>
+</div>

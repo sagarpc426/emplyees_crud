@@ -1,0 +1,41 @@
+<div class="container">
+  <table class="table caption-top table-hover table-bordered">
+    <h1 class="text-center">All Records</h1>
+    <p>
+      <%= link_to "Add New Record", employees_new_path, class:"btn btn-primary", remote:true, data: { toggle: 'modal', target: '#userForm' }%>
+<!-- Modal -->
+<div class="modal fade" id="userForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div id="newFormDiv">
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </p>
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Name</th>
+        <th scope="col" class="text-center">Email</th>
+        <th scope="col" colspan=3></th>
+        <%# <th scope="col"></th> %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @emp.each do |e| %>
+        <tr>
+          <td><%= e.name %></td>
+          <td><%= e.email%></td>
+          <td><%= link_to "Show", show_path(e.id), class: "btn btn-primary" %></td>
+          <td><%= link_to "Edit", edit_path(e.id), class:"btn btn-warning" %></td>
+          <td><%= link_to "Destroy", destroy_path(e.id), class:"btn btn-danger" %></td>
+        </tr>
+      <% end %>      
+  </table>
+</div>
+

@@ -1,0 +1,9 @@
+<p><div class="jumbotron">
+  <h3 class="display-6"><%= @employee.name %></h3>
+  <p class="lead"><%= @employee.email %></p>
+  <p class="lead">
+    <%= link_to 'Edit', edit_path(@employee.id), class:"btn btn-success" %>
+    <%= link_to 'Back', employees_index_path, class:"btn btn-danger" %>
+  </p>
+</div>
+</p>
